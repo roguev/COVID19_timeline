@@ -8,4 +8,4 @@ The notebook generates a bunch of still frames (in PNG format by defalt) which c
 
 ffmpeg -r 24 -framerate 24 -pattern_type glob -i '*.png' -c:v libvpx-vp9 -pix_fmt yuva420p -vf fps=24 output_file.mp4 (slow)
 
-ffmpeg -r 24 -framerate 24 -pattern_type glob -i '*.png' -c: mpeg4 -vf fps=24 output_file.mp4 (faster but worse quality)
+ffmpeg -r 12 -framerate 12 -pattern_type glob -i '*.png' -vcodec libx264 -crf 0 -vf fps=12 output_file.mp4 (faster)
